@@ -29,16 +29,16 @@ User → API Gateway → Lambda → DynamoDB → 301 Redirect
 
 ## Screenshots
 ### API Gateway Resources
-![API Gateway](screenshots/api-gateway.png)
+![API Gateway](screenshots/api-gateway.jpg)
 
 ### DynamoDB Table
-![DynamoDB](screenshots/dynamodb.png)
+![DynamoDB](screenshots/dynamodb.jpg)
 
 ### Terraform Apply
-![Terraform](screenshots/terraform.png)
+![Terraform](screenshots/terraform.jpg)
 
 ### Live API Test
-![Curl Test](screenshots/curl-test.png)
+![Curl Test](screenshots/curl-test.jpg)
 
 ## Files
 - create_function.py — Lambda to create short URLs
