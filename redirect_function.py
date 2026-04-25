@@ -1,0 +1,20 @@
+import json, boto3
+
+dynamodb = boto3.resource('dynamodb')
+table = dynamodb.Table('url-shortener')
+
+def lambda_handler(event, context):
+    short_code = event['pathParameters']['code']
+    response = table.get_item(Key={'short_code': short_code})
+
+    if 'Item' not in response:
+        return {
+            'statusCode': 404,
+            'body': json.dumps({'error': 'Short URL not found'})
+        }
+
+    return {
+        'statusCode': 301,
+        'headers': {'Location': response['Item']['long_url']},
+        'body': ''
+    }
